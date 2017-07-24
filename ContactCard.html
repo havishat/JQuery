@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>users Form</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+    <!--css-->
+    <style>  
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #wrapper {
+            width: 970px;
+            padding: 30px;
+            margin: 30px;
+        }      
+        form{
+            width: 400px;
+        }
+        #right{
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+        }
+
+        #left {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+            }
+        #card{
+            width: 150px;
+            height: 75px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        #back{
+            display: none;
+        }
+        input, textarea{
+            display: block;
+        }
+ 
+    </style>
+    <script>
+        	$(document).ready(function(){
+			$("button").click(function(){
+                var first = $("#first").val();
+                var last = $("#last").val();
+                var desc = $("#desc").val()
+                var para = $("#para");
+                $("#right").append("<div id = 'card'><p>" + first + " " + last+" "+para+"</p><p id = 'back'> " + desc +"</p></div>");
+                $("#first").val("");
+				$("#last").val("");
+				$("#desc").val("");
+                return false;
+            });
+            $(document).on('click', '#card', function(){
+				$(this).children().toggle();
+			});
+            })
+    </script>
+</head>
+
+<body>
+    <div id="#wrappar">
+        <div id="#left">
+            <form id='form1' method='post'>
+            First name: <input id = "first" type='text' name='first_name'>
+            Last name: <input id = "last" type='text' name='last_name'>
+            <label for="desc">Description:</label>
+			<textarea id="desc"></textarea>
+            <button>Add User</button>
+            </form>
+        </div>
+    	<div id ="right">
+		</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#wrapper{
+	width: 970px;
+    height: 800px;
+     padding: 30px;
+     margin: 30px;
+    background: lightblue;
+
+}
+
+#ninjawrapper{
+    padding: 30px;
+	width: 700px;
+    height: 400px;
+    margin: 30px;
+	}
+
